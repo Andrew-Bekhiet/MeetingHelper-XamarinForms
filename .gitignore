@@ -8,6 +8,7 @@ version-history/
 Data*.db
 Data*.zip
 
+libs/
 bin/
 obj/
 *.userprefs
