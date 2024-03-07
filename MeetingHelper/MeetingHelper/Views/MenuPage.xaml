@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetingHelper.Views.MenuPage"
+             FlowDirection="RightToLeft"
+             Title="الرئيسية">
+    <ScrollView>
+        <StackLayout x:Name="SL">
+            <Button x:Name="EP" 
+                HorizontalOptions="Fill" 
+                VerticalOptions="Center" 
+                Text="المخدومين" 
+                Clicked="Button_Click"
+                Margin="5" />
+            <Button x:Name="AddToday"
+                Text="إضافة اليوم"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Clicked="Button_Click"
+                Margin="5" />
+            <Button x:Name="History"
+                Text="السجل"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Clicked="Button_Click"
+                Margin="5" />
+            <Button x:Name="Search"
+                Text="بحث"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Clicked="Button_Click"
+                Margin="5" />
+            <Button x:Name="RandomP"
+                Text="اختيار عشوائي"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Clicked="Button_Click"
+                Margin="5" />
+            <Button x:Name="Settings"
+                Text="الإعدادات"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Clicked="Button_Click"
+                Margin="5" />
+            <Button x:Name="Update"
+                Text="التحقق من وجود تحديثات"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Clicked="Button_Click"
+                Margin="5" />
+            <Button x:Name="About"
+                Text="حول"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                Clicked="Button_Click"
+                Margin="5" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MeetingHelper.Models"
+             Title="الإعدادات"
+             x:Class="MeetingHelper.Views.Settings">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Save" Text="حفظ" Clicked="Save_Clicked"/>
+        <ToolbarItem x:Name="Import" Text="استيراد قاعدة البيانات" Clicked="Import_Clicked"/>
+        <ToolbarItem x:Name="Export" Text="تصدير قاعدة البيانات" Clicked="Export_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout x:Name="All">
+            <Label Text="الحقول الافتراضية:" VerticalOptions="Start" FontSize="Large" HorizontalOptions="Start" />
+            <StackLayout x:Name="Fields"/>
+
+            <Label Text="الدرجة عند الحضور في الموعد:" VerticalOptions="Start" FontSize="Medium" HorizontalOptions="Start" />
+            <Entry TextChanged="Setting_TextChanged" x:Name="DAtTime" Keyboard="Numeric" VerticalOptions="Start" HorizontalOptions="Fill"/>
+
+
+            <Label Text="الدرجة الافتراضية للسلوك:" VerticalOptions="Start" FontSize="Medium" HorizontalOptions="Start" />
+            <Entry TextChanged="Setting_TextChanged" x:Name="DBehavior" Keyboard="Numeric" VerticalOptions="Start" HorizontalOptions="Fill"/>
+
+            <Label Text="الشرح الافتراضي للسلوك:" VerticalOptions="Start" FontSize="Medium" HorizontalOptions="Start" />
+            <Entry TextChanged="Setting_TextChanged" x:Name="DBehaviorDesc" VerticalOptions="Start" HorizontalOptions="Fill"/>
+
+
+            <Label Text="الدرجة الافتراضية للتفاعل:" VerticalOptions="Start" FontSize="Medium" HorizontalOptions="Start" />
+            <Entry TextChanged="Setting_TextChanged" x:Name="DActivity" Keyboard="Numeric" VerticalOptions="Start" HorizontalOptions="Fill"/>
+
+            <Label Text="الشرح الافتراضي للتفاعل:" VerticalOptions="Start" FontSize="Medium" HorizontalOptions="Start" />
+            <Entry TextChanged="Setting_TextChanged" x:Name="DActivityDesc" VerticalOptions="Start" HorizontalOptions="Fill"/>
+
+
+            <Label Text="النص الافتراضي للمشاركة:" VerticalOptions="StartAndExpand" FontSize="Medium" HorizontalOptions="Start" />
+            <Entry TextChanged="Setting_TextChanged" x:Name="ShareTextHead" VerticalOptions="Start" HorizontalOptions="Fill" Placeholder="رأس الكلام"/>
+            <Editor TextChanged="Setting_TextChanged" x:Name="ShareText" VerticalOptions="Start" HorizontalOptions="Fill" AutoSize="TextChanges"/>
+            <Label Text="اكتب {الاسم} لتبديلها باسم المخدوم" VerticalOptions="StartAndExpand" FontSize="Small" HorizontalOptions="Start" />
+            <Label Text="اكتب {رقم الهاتف} لتبديلها برقم هاتف المخدوم" VerticalOptions="StartAndExpand" FontSize="Small" HorizontalOptions="Start" />
+            <Label Text="اكتب {درجة الحضور} لتبديلها بدرجة حضور المخدوم" VerticalOptions="StartAndExpand" FontSize="Small" HorizontalOptions="Start" />
+            <Label Text="اكتب {درجة التفاعل} لتبديلها بدرجة تفاعل المخدوم" VerticalOptions="StartAndExpand" FontSize="Small" HorizontalOptions="Start" />
+            <Label Text="اكتب {درجة السلوك} لتبديلها بدرجة سلوك المخدوم" VerticalOptions="StartAndExpand" FontSize="Small" HorizontalOptions="Start" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

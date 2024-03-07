@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetingHelper.Views.Randomizer"
+             Title="اختيار عشوائي">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                <Label Text="أكبر رقم:" HorizontalOptions="Start" />
+                <Entry x:Name="NumMax" Keyboard="Numeric" HorizontalOptions="StartAndExpand" Text="2"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                <Label Text="أصغر رقم:" HorizontalOptions="Start" />
+                <Entry x:Name="NumMin" Keyboard="Numeric" HorizontalOptions="StartAndExpand" Text="1"/>
+            </StackLayout>
+            <Button x:Name="GenerateN" Text="رقم جديد" Clicked="GenerateN_Clicked"/>
+            <Label x:Name="Number"/>
+            <Button x:Name="GenerateP" Text="اختيار شخص عشوائي" Clicked="GenerateP_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

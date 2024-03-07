@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetingHelper.Persons"
+             Title="المخدومين">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            x:Name="Add"
+            Text="إضافة"/>
+        <ToolbarItem
+            x:Name="AddFContacts"
+            Text="إضافة من جهات الإتصال"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="Fill" 
+            VerticalOptions="Fill">
+        <SearchBar
+            HorizontalOptions="Fill" 
+            VerticalOptions="Start"
+            x:Name="PsSearch"
+            SearchButtonPressed="PsSearch_Search"
+            TextChanged="PsSearch_TextChanged"
+            Placeholder="بحث ..." />
+        <ListView CachingStrategy="RecycleElementAndDataTemplate" x:Name="PsList" ItemSelected="PsList_ItemSelected" VerticalOptions="Fill" RowHeight="80" IsPullToRefreshEnabled="True" Refreshing="PsList_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding GetName}" Detail="{Binding GetPhoneNumber}" ImageSource="{Binding GetImage}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,217 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceAssemblyReference>true</ProduceAssemblyReference>
+    <Authors>Andrew Akladious Bekhiet, Michael Ezzat</Authors>
+    <Company>Saint Mary church in Ismailia</Company>
+    <Copyright>Andrew Akladious Bekhiet</Copyright>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
+    <Version>2.1.1245.5</Version>
+    <Description>برنامج يساعد الخدام في الاجتماعات، لتسجيل غياب وحضور المخدومين، ودرجات تفاعلهم مع فقرات الاجتماع ودرجات سلوكهم سواء جيد أو س</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Training_Models\**" />
+    <EmbeddedResource Remove="Training_Models\**" />
+    <None Remove="Training_Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\HomeMenuItem.cs" />
+    <Compile Remove="Models\Item.cs" />
+    <Compile Remove="Models\ListViewItem.cs" />
+    <Compile Remove="Services\IDataStore.cs" />
+    <Compile Remove="Services\MockDataStore.cs" />
+    <Compile Remove="ViewModels\AboutViewModel.cs" />
+    <Compile Remove="ViewModels\BaseViewModel.cs" />
+    <Compile Remove="ViewModels\ItemDetailViewModel.cs" />
+    <Compile Remove="ViewModels\ItemsViewModel.cs" />
+    <Compile Remove="Views\ItemDetailPage.xaml.cs" />
+    <Compile Remove="Views\NewItemPage.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\ItemDetailPage.xaml" />
+    <EmbeddedResource Remove="Views\NewItemPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="AboutI.png" />
+    <None Remove="AddFC.png" />
+    <None Remove="AddFCUWP.png" />
+    <None Remove="AddField.png" />
+    <None Remove="AddP.png" />
+    <None Remove="AddPUWP.png" />
+    <None Remove="AddTodayI.png" />
+    <None Remove="Cancel.png" />
+    <None Remove="CancelUWP.png" />
+    <None Remove="Delete.png" />
+    <None Remove="DeleteUWP.png" />
+    <None Remove="Export.png" />
+    <None Remove="ExportUWP.png" />
+    <None Remove="HistoryI.png" />
+    <None Remove="Import.png" />
+    <None Remove="ImportUWP.png" />
+    <None Remove="Logo.ico" />
+    <None Remove="OpenCV\haarcascade_frontalface_alt.xml" />
+    <None Remove="Person.png" />
+    <None Remove="PersonsI.png" />
+    <None Remove="plus.png" />
+    <None Remove="Save.png" />
+    <None Remove="SaveUWP.png" />
+    <None Remove="SearchI.png" />
+    <None Remove="SettingsI.png" />
+    <None Remove="Share.png" />
+    <None Remove="ShareUWP.png" />
+    <None Remove="Update.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="AboutI.png" />
+    <EmbeddedResource Include="AddFC.png" />
+    <EmbeddedResource Include="AddFCUWP.png" />
+    <EmbeddedResource Include="AddField.png" />
+    <EmbeddedResource Include="AddP.png" />
+    <EmbeddedResource Include="AddPUWP.png" />
+    <EmbeddedResource Include="AddTodayI.png" />
+    <EmbeddedResource Include="Cancel.png" />
+    <EmbeddedResource Include="CancelUWP.png" />
+    <EmbeddedResource Include="Delete.png" />
+    <EmbeddedResource Include="DeleteUWP.png" />
+    <EmbeddedResource Include="Export.png" />
+    <EmbeddedResource Include="ExportUWP.png" />
+    <EmbeddedResource Include="HistoryI.png" />
+    <EmbeddedResource Include="Import.png" />
+    <EmbeddedResource Include="ImportUWP.png" />
+    <EmbeddedResource Include="Logo.ico" />
+    <EmbeddedResource Include="OpenCV\haarcascade_frontalface_alt.xml" />
+    <EmbeddedResource Include="Person.png" />
+    <EmbeddedResource Include="PersonsI.png" />
+    <EmbeddedResource Include="Save.png" />
+    <EmbeddedResource Include="SaveUWP.png" />
+    <EmbeddedResource Include="SearchI.png" />
+    <EmbeddedResource Include="SettingsI.png" />
+    <EmbeddedResource Include="Share.png" />
+    <EmbeddedResource Include="ShareUWP.png" />
+    <EmbeddedResource Include="Update.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.35" />
+    <PackageReference Include="IntelliAbb.Xamarin.Controls" Version="1.0.148" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="sqlite-net-sqlcipher" Version="1.6.292" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.4.0.44" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991537" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />  
+    <PackageReference Include="Xamarin.Forms.Contacts" Version="1.0.5" />  
+    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.34" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="C:\Users\Andre\.nuget\packages\opencvsharp3-anycpu\4.0.0.20181129\build\..\runtimes\win10-x64\native\OpenCvSharpExtern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="C:\Users\Andre\.nuget\packages\opencvsharp3-anycpu\4.0.0.20181129\build\..\runtimes\win10-x64\native\opencv_ffmpeg400_64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="C:\Users\Andre\.nuget\packages\opencvsharp3-anycpu\4.0.0.20181129\build\..\runtimes\win10-x86\native\OpenCvSharpExtern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="C:\Users\Andre\.nuget\packages\opencvsharp3-anycpu\4.0.0.20181129\build\..\runtimes\win10-x86\native\opencv_ffmpeg400.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Views\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Check4Updates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Contacts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Day.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\History.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ItemDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ItemsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MainPage2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MenuPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\NewItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Person.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Persons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\SearchResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\SQLiteQ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Check4Updates.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Contacts.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Day.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\History.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Randomizer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SearchResults.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Settings.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SQLiteQ.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

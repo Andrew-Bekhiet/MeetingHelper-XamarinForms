@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetingHelper.Views.ItemsPage"
+             Title="القائمة"
+             FlowDirection="RightToLeft">
+    <ListView x:Name="Items" VerticalOptions="Fill" RowHeight="80" >
+        <ListView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>الرئيسية</x:String>
+                <x:String>المخدومين</x:String>
+                <x:String>إضافة اليوم</x:String>
+                <x:String>السجل</x:String>
+                <x:String>بحث</x:String>
+                <x:String>اختيار عشوائي</x:String>
+                <x:String>التحقق من وجود تحديثات</x:String>
+                <x:String>الإعدادات</x:String>
+                <x:String>حول</x:String>
+            </x:Array>
+        </ListView.ItemsSource>
+    </ListView>
+</ContentPage>

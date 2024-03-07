@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetingHelper.Views.History"
+             xmlns:local="clr-namespace:MeetingHelper.Views"
+             Title="السجل">
+    <ListView x:Name="HistoryL" IsPullToRefreshEnabled="True" ItemSelected="HistoryL_ItemSelected" HorizontalOptions="Fill" VerticalOptions="Fill" Refreshing="HistoryL_Refreshing" RowHeight="75">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout local:History.Tag="{Binding TableName}">
+                        <Label Text="{Binding DayName}" FontSize="Title" TextColor="Black"/>
+                        <Label Text="{Binding Date}" FontSize="Small" TextColor="Gray"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetingHelper.Views.AboutPage"
+             Title="حول مساعد الاجتماع">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="Accent" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image x:Name="Logo" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                <Label FontSize="22">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="مساعد الاجتماع " FontAttributes="Bold" FontSize="Title" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label FontSize="Body">برنامج يساعد الخدام في الاجتماعات، لتسجيل غياب وحضور المخدومين، ودرجات تفاعلهم مع فقرات الاجتماع ودرجات سلوكهم سواء جيد أو سئ</Label>
+                <Label FontSize="Body">جميع الحقوق محفوظة: أندرو أقلديوس بخيت</Label>
+                <Label FontSize="Body">كنيسة السيدة العذراء مريم بالاسماعيلية</Label>
+                <Label FontSize="Body" TextDecorations="Underline" TextColor="Blue" Text="رأيك يهمنا">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Feedback_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label FontSize="Body">في حال وجود خطأ أو مشكلة يرجى إرسالها لمطور البرنامج على الرابط التالي:</Label>
+                <Label Text="https://docs.google.com/forms/d/e/1FAIpQLScpSkF514EycFoSzlr9BmK35rq8MsaMfFqbZ6r4JRBa3-Gvtw/viewform" TextDecorations="Underline" TextColor="Blue">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Error_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetingHelper.Views.Day"
+             xmlns:ia="clr-namespace:IntelliAbb.Xamarin.Controls;assembly=IntelliAbb.Xamarin.Controls"
+             xmlns:local="clr-namespace:MeetingHelper.Views"
+             FlowDirection="RightToLeft">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem IconImageSource="MeetingHelper.Save.png" x:Name="DaySave" Text="حفظ إلى قاعدة البيانات" Clicked="DaySave_Clicked"/>
+    </TabbedPage.ToolbarItems>
+    <ContentPage Title="الغياب والحضور">
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <SearchBar
+                HorizontalOptions="Fill" 
+                VerticalOptions="Start"
+                x:Name="DASearch"
+                HeightRequest="35"
+                SearchButtonPressed="DASearch_SearchButtonPressed"
+                TextChanged="DASearch_TextChanged"
+                Placeholder="بحث ..." />
+            <ListView x:Name="APersons"
+                RowHeight="150"
+                Refreshing="APersons_Refreshing"
+                IsPullToRefreshEnabled="True"
+                ItemSelected="APersons_ItemSelected"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout IsEnabled="{Binding Enabled}" VerticalOptions="Fill" FlowDirection="RightToLeft" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Image Source="{Binding Image}" HorizontalOptions="Start" WidthRequest="100" HeightRequest="100" />
+                                <StackLayout FlowDirection="RightToLeft" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                        <ia:Checkbox HorizontalOptions="Start" FillColor="Accent" OutlineColor="Accent" x:Name="Check" IsChecked="{Binding NameCheck, Mode=TwoWay}" />
+                                        <Label Text="{Binding Name}" FontSize="Title" TextColor="Black" HorizontalTextAlignment="Start" HorizontalOptions="Fill">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Name"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </StackLayout>
+                                    <TimePicker Time="{Binding Time, Mode=TwoWay}" IsEnabled="{Binding NameCheck, Mode=TwoWay}" FontSize="Medium" HorizontalOptions="Fill"/>
+                                    <Entry Text="{Binding Bonus, Mode=TwoWay}" Placeholder="الدرجة" IsEnabled="{Binding NameCheck, Mode=TwoWay}" HorizontalTextAlignment="Center" FontSize="Medium" HorizontalOptions="Fill" Keyboard="Numeric"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="UseFaceRec"
+                Text="استخدام التعرف على الوجه"
+                FontSize="Caption"
+                Clicked="UseFID"
+                VerticalOptions="End"
+                HorizontalOptions="Fill"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="السلوك" >
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <local:AddConvert x:Key="AddC"/>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <SearchBar
+                HorizontalOptions="Fill" 
+                VerticalOptions="Start"
+                x:Name="DBSearch"
+                HeightRequest="35"
+                SearchButtonPressed="DBSearch_SearchButtonPressed"
+                TextChanged="DBSearch_TextChanged"
+                Placeholder="بحث ..." />
+            <ListView x:Name="BPersons"
+                RowHeight="150"
+                Refreshing="BPersons_Refreshing"
+                ItemSelected="BPersons_ItemSelected"
+                IsPullToRefreshEnabled="True"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout IsEnabled="{Binding Enabled}" VerticalOptions="Fill" FlowDirection="RightToLeft" Orientation="Horizontal" HorizontalOptions="Fill">
+                                <Image Source="{Binding Image}" HorizontalOptions="Start" WidthRequest="100" HeightRequest="100" />
+                                <StackLayout FlowDirection="RightToLeft" Orientation="Vertical" HorizontalOptions="Fill">
+                                    <Label Text="{Binding Name}" FontSize="Title" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Fill">
+                                        <Picker FontSize="Medium" SelectedIndex="{Binding _add, Converter={StaticResource AddC}, Mode=TwoWay}" HorizontalOptions="Start">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>+</x:String>
+                                                    <x:String>-</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+                                        <Entry Text="{Binding Degrees, Mode=TwoWay}" Placeholder="الدرجة" HorizontalTextAlignment="Center" FontSize="Medium" HorizontalOptions="Fill" Keyboard="Numeric"/>
+                                    </StackLayout>
+                                    <Editor Text="{Binding Description, Mode=TwoWay}" HorizontalOptions="Fill" Placeholder="لماذا تمت إضافة/خصم هذه الدرجات" FontSize="Medium" AutoSize="TextChanges"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="التفاعل" >
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <local:AddConvert x:Key="AddC"/>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <SearchBar
+                HorizontalOptions="Fill" 
+                VerticalOptions="Start"
+                x:Name="DACSearch"
+                HeightRequest="35"
+                SearchButtonPressed="DACSearch_SearchButtonPressed"
+                TextChanged="DACSearch_TextChanged"
+                Placeholder="بحث ..." />
+            <ListView x:Name="ACPersons"
+                RowHeight="150"
+                Refreshing="ACPersons_Refreshing"
+                ItemSelected="ACPersons_ItemSelected"
+                IsPullToRefreshEnabled="True"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout IsEnabled="{Binding Enabled}" VerticalOptions="Fill" FlowDirection="RightToLeft" Orientation="Horizontal" HorizontalOptions="Fill">
+                                <Image Source="{Binding Image}" HorizontalOptions="Start" WidthRequest="100" HeightRequest="100" />
+                                <StackLayout FlowDirection="RightToLeft" Orientation="Vertical" HorizontalOptions="Fill">
+                                    <Label Text="{Binding Name}" FontSize="Title" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Fill">
+                                        <Picker FontSize="Medium" SelectedIndex="{Binding _add, Converter={StaticResource AddC}, Mode=TwoWay}">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>+</x:String>
+                                                    <x:String>-</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                        </Picker>
+                                        <Entry Text="{Binding Degrees, Mode=TwoWay}" Placeholder="الدرجة" HorizontalTextAlignment="Center" FontSize="Medium" HorizontalOptions="Fill" Keyboard="Numeric"/>
+                                    </StackLayout>
+                                    <Editor Text="{Binding Description, Mode=TwoWay}" Placeholder="لماذا تمت إضافة/خصم هذه الدرجات وفي فقرة مَن؟" FontSize="Medium" HorizontalOptions="Fill" AutoSize="TextChanges"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

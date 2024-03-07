@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+            x:Name="Main"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:MeetingHelper.Views"
+            x:Class="MeetingHelper.Views.MainPage"
+            FlowDirection="RightToLeft">
+
+    <MasterDetailPage.Master FlowDirection="RightToLeft">
+        <views:ItemsPage />
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage FlowDirection="RightToLeft">
+            <x:Arguments>
+                <views:MenuPage />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>

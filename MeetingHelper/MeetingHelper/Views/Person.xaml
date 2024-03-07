@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetingHelper.Person">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="حفظ"
+            x:Name="PSave" 
+            Clicked="PSave_Clicked"/>
+        <ToolbarItem
+            Text="حذف"
+            x:Name="PDelete" 
+            Clicked="PDelete_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout x:Name="SL"  VerticalOptions="FillAndExpand">
+            <Label
+                Text="الصورة:"
+                Style="{StaticResource HeadLabel}" />
+            <ImageButton
+                x:Name="PImage"
+                BackgroundColor="Transparent"
+                HorizontalOptions="Fill"
+                VerticalOptions="StartAndExpand"
+                HeightRequest="100"/>
+           <Label
+               Text="البيانات"
+               Style="{StaticResource HeadLabel}"/>
+            <StackLayout
+                x:Name="PAFLL"
+                Orientation="Vertical"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start"
+                MinimumWidthRequest="25"
+                MinimumHeightRequest="25"
+                Margin="5">
+                <!--<StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="الإسم"
+                        Style="{StaticResource SubHeadLabel}"/>
+                    <Entry
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Fill"
+                        Placeholder="الإسم"
+                        Margin="5"
+                        ReturnType="Next"
+                        Completed="Next"
+                        IsTabStop="True"
+                        TabIndex="0"
+                        FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="رقم الهاتف"
+                        Style="{StaticResource SubHeadLabel}"/>
+                    <Entry
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Fill"
+                        Placeholder="رقم الهاتف"
+                        Margin="5"
+                        ReturnType="Next"
+                        Completed="Next"
+                        IsTabStop="True"
+                        FontSize="Medium"
+                        TabIndex="1"
+                        Keyboard="Telephone"/>
+                </StackLayout>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="العنوان"
+                        Style="{StaticResource SubHeadLabel}"/>
+                    <Entry
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Fill"
+                        Placeholder="العنوان"
+                        ReturnType="Next"
+                        Completed="Next"
+                        IsTabStop="True"
+                        TabIndex="2"
+                        FontSize="Medium"
+                        Margin="5" />
+                </StackLayout>-->
+            </StackLayout>
+            <!--<Button
+                Text="إضافة حقل"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start"
+                x:Name="PAFB"
+                Clicked="PAFB_Clicked"
+                Margin="5"
+                IsTabStop="True"
+                TabIndex="3"
+                FontSize="Medium" />-->
+            <Label
+               Text="الدرجات"
+                Style="{StaticResource HeadLabel}"/>
+            <StackLayout
+                x:Name="PDegrees"
+                Orientation="Vertical"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start"
+                Margin="5">
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="درجات التفاعل:"
+                        Style="{StaticResource SubHeadLabel}"/>
+                    <Entry
+                        x:Name="PActivity"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Fill"
+                        Margin="5"
+                        Placeholder="درجات التفاعل"
+                        ReturnType="Next"
+                        Completed="NextD"
+                        FontSize="Medium"
+                        IsTabStop="True"
+                        TabIndex="4"
+                        Keyboard="Numeric"/>
+                </StackLayout>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="درجات السلوك:"
+                        Style="{StaticResource SubHeadLabel}"/>
+                    <Entry
+                        x:Name="PBehav"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Fill"
+                        Margin="5"
+                        Placeholder="درجات السلوك"
+                        ReturnType="Next"
+                        Completed="NextD"
+                        FontSize="Medium"
+                        IsTabStop="True"
+                        TabIndex="5"
+                        Keyboard="Numeric"/>
+                </StackLayout>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Start">
+                    <Label
+                        Text="درجات الغياب والحضور:"
+                        Style="{StaticResource SubHeadLabel}"/>
+                    <Entry
+                        x:Name="PAbsense"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Fill"
+                        Margin="5"
+                        FontSize="Medium"
+                        Placeholder="درجات الغياب والحضور"
+                        ReturnType="Done"
+                        Completed="NextD"
+                        IsTabStop="True"
+                        TabIndex="6"
+                        Keyboard="Numeric"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

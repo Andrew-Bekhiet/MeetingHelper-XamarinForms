@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MeetingHelper.Models"
+             x:Class="MeetingHelper.Views.SQLiteQ"
+             FlowDirection="RightToLeft" 
+             Title="بحث">
+    <ContentPage Title="الواجهة البسيطة">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <FlexLayout Direction="RowReverse" AlignItems="Center" HorizontalOptions="Fill" VerticalOptions="Start">
+                        <Label Text="ابحث في:" FontSize="Medium" />
+                        <Picker FlexLayout.Basis="87%" x:Name="AvaliableTables" SelectedIndexChanged="AvaliableTables_SelectedIndexChanged" FontSize="Medium"/>
+                    </FlexLayout>
+                    <FlexLayout Direction="Column" JustifyContent="Start" AlignItems="Stretch" HorizontalOptions="Fill" VerticalOptions="Start">
+                        <Label FontSize="Medium">حيث أن:</Label>
+                        <local:SqlWhereContainer x:Name="Columns"/>
+                    </FlexLayout>
+                    <Button x:Name="ExecuteQuery" Clicked="ExecuteQuery_Clicked" Text="تنفيذ" HorizontalOptions="Fill" VerticalOptions="End"/>
+                    <Button x:Name="AddQ" Clicked="AddQ_Clicked" Text="حفظ" HorizontalOptions="Fill" VerticalOptions="End"/>
+                    <Button x:Name="DeleteQ" Clicked="DeleteQ_Clicked" Text="حذف" HorizontalOptions="Fill" VerticalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="الواجهة المتقدمة">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Editor HorizontalOptions="Fill" VerticalOptions="End" x:Name="SQLCommand" FontSize="Medium"/>
+                <Picker x:Name="TableType" Title="من جدول" SelectedIndex="0">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>المخدومين</x:String>
+                            <x:String>الغياب والحضور</x:String>
+                            <x:String>التفاعل</x:String>
+                            <x:String>السلوك</x:String>
+                            <x:String>SQLite Master</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Button Text="تنفيذ" HorizontalOptions="Fill" VerticalOptions="End" x:Name="ExecuteAdvanced" Clicked="ExecuteAdvanced_Clicked"/>
+                <Button x:Name="AddQAdv" Clicked="AddQAdv_Clicked"  Text="حفظ" HorizontalOptions="Fill" VerticalOptions="End"/>
+                <Button x:Name="DeleteQAdv" Clicked="DeleteQ_Clicked" Text="حذف" HorizontalOptions="Fill" VerticalOptions="End"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

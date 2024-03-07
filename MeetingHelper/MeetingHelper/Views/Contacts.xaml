@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeetingHelper.Views.Contacts">
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical"
+            HorizontalOptions="Fill" 
+            VerticalOptions="Fill">
+            <SearchBar
+                HorizontalOptions="Fill" 
+                VerticalOptions="Start"
+                x:Name="CSearch"
+                TextChanged="CSearch_TextChanged"
+                SearchButtonPressed="CSearch_SearchButtonPressed"
+                Placeholder="بحث ..." />
+            <ListView  x:Name="CList" ItemSelected="CList_ItemSelected" Refreshing="CList_Refreshing" VerticalOptions="Fill" RowHeight="80" IsPullToRefreshEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                <Image Source="{Binding Image}" HorizontalOptions="Start" WidthRequest="80" />
+                                <StackLayout Orientation="Vertical" HorizontalOptions="Fill">
+                                    <Label Text = "{Binding Name}" FontSize="24" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text = "{Binding PhoneN}" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
